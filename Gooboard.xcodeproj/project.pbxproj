@@ -23,10 +23,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CEC94A7F2E24709900697371 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CEB26E9A2E231C230062A0B1 /* Gooboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gooboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB26EA72E231C240062A0B1 /* GooboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB26EB12E231C240062A0B1 /* GooboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC94A6C2E24709700697371 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CEC94A6E2E24709700697371 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -78,6 +93,7 @@
 				CEB26E9C2E231C230062A0B1 /* Gooboard */,
 				CEB26EAA2E231C240062A0B1 /* GooboardTests */,
 				CEB26EB42E231C240062A0B1 /* GooboardUITests */,
+				CEC94A6B2E24709700697371 /* Frameworks */,
 				CEB26E9B2E231C230062A0B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +108,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CEC94A6B2E24709700697371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEC94A6C2E24709700697371 /* WidgetKit.framework */,
+				CEC94A6E2E24709700697371 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +127,7 @@
 				CEB26E962E231C230062A0B1 /* Sources */,
 				CEB26E972E231C230062A0B1 /* Frameworks */,
 				CEB26E982E231C230062A0B1 /* Resources */,
+				CEC94A7F2E24709900697371 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -170,7 +196,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					CEB26E992E231C230062A0B1 = {
