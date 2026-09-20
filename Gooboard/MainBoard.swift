@@ -155,6 +155,7 @@ struct SoundboardView: View {
     @FocusState private var titleIsFocused: Bool
     
     @State private var stopAllTrigger: UUID = UUID()
+    @GestureState private var dragOffset: CGSize = .zero
 
     init(soundboard: Binding<Soundboard>, soundNames: [String], onSwipe: ((SwipeDirection) -> Void)? = nil) {
         _soundboard = soundboard
@@ -205,8 +206,21 @@ struct SoundboardView: View {
             }
             .padding()
             .onTapGesture { titleIsFocused = false }
-            .gesture(DragGesture().onChanged { _ in titleIsFocused = false })
+            // .gesture(DragGesture().onChanged { _ in titleIsFocused = false }) // Removed as per instructions
         }
+        .highPriorityGesture(
+            DragGesture()
+                .updating($dragOffset) { value, state, _ in
+                    state = value.translation
+                }
+                .onEnded { value in
+                    if value.translation.width < -60 {
+                        onSwipe?(.left)
+                    } else if value.translation.width > 60 {
+                        onSwipe?(.right)
+                    }
+                }
+        )
     }
 }
 
@@ -397,7 +411,7 @@ struct SoundButton: View {
             .frame(width: 80, height: 80)
             .animation(.spring(), value: manager.isPlaying)
         }
-        .onChange(of: stopAllTrigger) { _ in
+        .onChange(of: stopAllTrigger) { _, _ in
             manager.stop()
         }
         .onLongPressGesture {
